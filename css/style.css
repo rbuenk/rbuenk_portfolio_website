@@ -91,6 +91,18 @@ strong { font-weight: var(--fw-bold) }
     transform: scale(1.1);
 }
 
+.btn--outline {
+    background: transparent;
+    color: var(--clr-light);
+    border: 2px solid var(--clr-light);
+    padding: calc(.5em - 2px) calc(2.5em - 2px);
+}
+
+.btn--outline:hover {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+}
+
 /* Typography */
 
 h1,
@@ -331,14 +343,13 @@ header {
 
 @media (min-width: 800px) {
     .services {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 4em;
+        row-gap: 2.5em;
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
-    }
-    
-    .service + .service {
-        margin-left: 2em;
     }
 }
 
@@ -384,6 +395,124 @@ header {
     }
 }
 
+/* Mentorship */
+
+.mentorship {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--mentorship {
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 2em;
+    display: inline-block;
+}
+
+.mentorship__intro {
+    max-width: 800px;
+    margin: 0 auto 3em;
+    text-align: left;
+}
+
+.mentorship__audience {
+    display: block;
+    margin-top: 1em;
+}
+
+.tiers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tier {
+    position: relative;
+    background: transparent;
+    color: var(--clr-light);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5em 2em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier--featured {
+    border-color: var(--clr-accent);
+    border-width: 3px;
+}
+
+.tier__badge {
+    position: absolute;
+    top: -.9em;
+    right: 1.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    font-family: var(--ff-secondary);
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: .25em .75em;
+}
+
+.tier__name {
+    margin-bottom: .25em;
+}
+
+.tier__price {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-bold);
+    font-size: 1.1rem;
+    margin: 0 0 1em;
+}
+
+.tier__price-note {
+    font-weight: var(--fw-reg);
+    opacity: .7;
+    font-size: .9rem;
+}
+
+.tier__pitch {
+    margin-top: 0;
+}
+
+.tier__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em;
+    flex-grow: 1;
+}
+
+.tier__list li {
+    padding: .35em 0 .35em 1.5em;
+    position: relative;
+}
+
+.tier__list li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
+.tier .btn,
+.tier .btn--outline {
+    align-self: flex-start;
+}
+
+@media (min-width: 800px) {
+    .tiers {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /* My Work */
 
 .my-work {
@@ -393,13 +522,19 @@ header {
 }
 
 .portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .portfolio__item {
+    flex: 0 1 300px;
     background: var(--clr-accent);
     overflow: hidden;
+}
+
+.portfolio__item--brainbeat {
+    background: #005fac;
 }
 
 .portfolio__img {
