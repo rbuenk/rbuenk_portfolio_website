@@ -114,7 +114,7 @@
                         <li>Interview &amp; technical prep</li>
                         <li>Weekly accountability check-ins</li>
                     </ul>
-                    <a href="mailto:rbuenk33@gmail.com?subject=Mentorship%20Program%20Enquiry" class="btn btn--outline">Enquire</a>
+                    <button type="button" class="btn btn--outline" data-modal-open="enquiry">Enquire</button>
                 </div>
 
                 <!-- Tier 2: 1-on-1 Hour (featured) -->
@@ -202,6 +202,23 @@
             </p>
         </footer>
 
+
+        <!-- Enquiry modal -->
+        <div class="modal" id="modal-enquiry" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-enquiry-title">
+            <div class="modal__overlay" data-modal-close></div>
+            <div class="modal__content">
+                <button class="modal__close" data-modal-close aria-label="Close">&times;</button>
+                <h3 id="modal-enquiry-title" class="modal__title">Mentorship Programme Enquiry</h3>
+                <p class="modal__body">Thanks for your interest. Email me with a bit about your background and goals, and I'll get back to you with a tailored proposal.</p>
+                <p class="modal__email">
+                    <a href="mailto:rbuenk33@gmail.com?subject=Mentorship%20Program%20Enquiry">rbuenk33@gmail.com</a>
+                </p>
+                <div class="modal__actions">
+                    <a href="mailto:rbuenk33@gmail.com?subject=Mentorship%20Program%20Enquiry" class="btn">Open in email app</a>
+                    <button type="button" class="btn btn--outline" data-copy-email="rbuenk33@gmail.com">Copy address</button>
+                </div>
+            </div>
+        </div>
 
         <script src="js/index.js"></script>
 
