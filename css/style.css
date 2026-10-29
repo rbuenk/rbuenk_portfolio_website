@@ -306,6 +306,8 @@ header {
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+        /* keep the text clear of the image so the grid widens to fit it */
+        padding-left: calc(250px + 2.5em);
     }
 }
 
